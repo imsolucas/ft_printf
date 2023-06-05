@@ -6,7 +6,7 @@
 /*   By: djin <djin@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/02 14:15:17 by djin              #+#    #+#             */
-/*   Updated: 2023/06/06 00:41:36 by djin             ###   ########.fr       */
+/*   Updated: 2023/06/06 01:01:22 by djin             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@
 # include <stdlib.h>
 # include <stdbool.h>
 # include <stdio.h>
+# include <string.h>
 
 int		ft_printf(const char *str, ...);
 void	print_ptr(unsigned long int n, int *len);

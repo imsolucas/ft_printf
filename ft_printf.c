@@ -6,7 +6,7 @@
 /*   By: djin <djin@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/06 00:05:51 by djin              #+#    #+#             */
-/*   Updated: 2023/06/06 00:41:16 by djin             ###   ########.fr       */
+/*   Updated: 2023/06/06 00:59:57 by djin             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,22 +37,20 @@ static void	printf_checker(char c, va_list *ap, int *len)
 int	ft_printf(const char *str, ...)
 {
 	va_list	ap;
-	int		i;
 	int		len;
+	int		i;
 
-	i = 0;
+	i = -1;
 	len = 0;
 	va_start(ap, str);
-	while (str[i])
+	while (++i < (int)ft_strlen(str) && str[i])
 	{
 		if (str[i] == '%')
 		{
-			i++;
-			printf_checker(str[i], &ap, &len);
+			printf_checker(str[++i], &ap, &len);
 		}
 		else
-			ft_put_char(*str, &len);
-		i++;
+			ft_put_char(str[i], &len);
 	}
 	va_end(ap);
 	return (len);
