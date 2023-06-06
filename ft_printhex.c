@@ -6,7 +6,7 @@
 /*   By: djin <djin@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/05 23:43:32 by djin              #+#    #+#             */
-/*   Updated: 2023/06/06 15:53:21 by djin             ###   ########.fr       */
+/*   Updated: 2023/06/06 21:52:50 by djin             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,15 +44,15 @@ void	print_hex(unsigned int n, int *len)
 	}
 }
 
-void	ptr_hex(unsigned long int n, int *len)
+void	ptr_hex(unsigned long long n, int *len)
 {
 	char	*str;
 
 	str = "0123456789abcdef";
 	if (n >= 16)
 	{
-		print_hex(n / 16, len);
-		print_hex(n % 16, len);
+		ptr_hex(n / 16, len);
+		ptr_hex(n % 16, len);
 	}
 	else
 	{
@@ -60,9 +60,9 @@ void	ptr_hex(unsigned long int n, int *len)
 	}
 }
 
-void	print_ptr(unsigned long int n, int *len)
+void	print_ptr(unsigned long long n, int *len)
 {
-	ft_put_char('0', len);
-	ft_put_char('x', len);
+	*len += ft_put_char('0');
+	*len += ft_put_char('x');
 	ptr_hex(n, len);
 }

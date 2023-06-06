@@ -6,16 +6,15 @@
 /*   By: djin <djin@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/03 14:50:12 by djin              #+#    #+#             */
-/*   Updated: 2023/06/06 15:22:46 by djin             ###   ########.fr       */
+/*   Updated: 2023/06/06 19:37:20 by djin             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void	ft_put_char(char c, int *len)
+int	ft_put_char(char c)
 {
-	write (1, &c, 1);
-	*len += 1;
+	return (write (1, &c, 1));
 }
 
 void	ft_put_str(char *str, int *len)
@@ -28,6 +27,6 @@ void	ft_put_str(char *str, int *len)
 	}
 	while (*str)
 	{
-		len += write(1, &*str++, 1);
+		*len += write (1, &*str++, 1);
 	}
 }
