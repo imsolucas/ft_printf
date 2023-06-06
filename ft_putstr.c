@@ -6,21 +6,11 @@
 /*   By: djin <djin@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/03 14:50:12 by djin              #+#    #+#             */
-/*   Updated: 2023/06/06 00:58:04 by djin             ###   ########.fr       */
+/*   Updated: 2023/06/06 15:22:46 by djin             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-
-size_t	ft_strlen(const char *s)
-{
-	int	i;
-
-	i = 0;
-	while (s[i])
-		++i;
-	return (i);
-}
 
 void	ft_put_char(char c, int *len)
 {
